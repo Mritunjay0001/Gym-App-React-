@@ -5,11 +5,14 @@ import hero_image from "../assets/hero_image.png";
 import hero_image_back from "../assets/hero_image_back.png";
 import Heart from "../assets/heart.png";
 import Calories from "../assets/calories.png";
+import {motion} from 'framer-motion';
 
 
 const Hero =()=>{
+    const transition ={type:'spring',duration: 3}
+    const mobile=window.innerWidth<=768 ? true:false;
     return (
-        <div className="hero">
+        <div className="hero" id="home">
 
             <div className="blur hero-blur"></div>
          
@@ -17,7 +20,11 @@ const Hero =()=>{
             <Header/>
          {/* //add wala section */}
          <div className="the-best-add">
-            <div></div>
+            <motion.div 
+            initial={{left:mobile ? '178px' : '238'}}
+            whileInView={{left: '8px'}}
+            transition={transition}
+            ></motion.div> 
             <span>the best fitness club in the town</span>
          </div>
 
@@ -64,11 +71,15 @@ const Hero =()=>{
           <button className="btn">Join Now</button>
 
 
-          <div className="heart-rate">
+          <motion.div 
+           initial={{right: '-1rem'}}
+           whileInView={{right: '4rem'}}
+           transition={transition}
+          className="heart-rate">
             <img src={Heart} alt="" />
             <span>Heart Rate</span>
             <span>116 BPM</span>
-          </div>
+          </motion.div>
 
           {/* hero wala img  */}
 

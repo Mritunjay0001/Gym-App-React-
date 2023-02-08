@@ -3,8 +3,10 @@
     justify-content: space-between;
 }
 .logo{
-    width: 10rem;
-    height: 5rem;
+    width: 15rem;
+    height: 7rem;
+    border-radius: 50%;
+    
 }
 .header-menu{
     list-style: none;
@@ -32,4 +34,16 @@
 .the-best-add{
    margin-top: 4rem;
    background-color: #363d42; 
+}
+@media screen and (max-width:768px){
+    .header>:nth-child(2){
+        position: fixed;
+        right: 2rem;
+        z-index: 99;
+    }
+    .header-menu{
+        flex-direction: column;
+        background-color: var(--appColor);
+        padding: 2rem;
+    }
 }
